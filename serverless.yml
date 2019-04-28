@@ -13,10 +13,6 @@ functions:
           method: post
           cors: true
       - http:
-          path: graphiql
-          method: post
-          cors: true
-      - http:
           path: playground
           method: '*'
           cors: true
