@@ -1,4 +1,4 @@
-service: api-graphql # NOTE: update this with your service name
+service: api-graphql
 
 provider:
   name: aws
@@ -14,9 +14,9 @@ functions:
           cors: true
       - http:
           path: playground
-          method: '*'
+          method: get
           cors: true
-
+          integration: lambda-proxy
 
 plugins:
   - serverless-offline
