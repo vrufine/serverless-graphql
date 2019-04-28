@@ -1,0 +1,26 @@
+service: api-graphql # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  query:
+    handler: handler.query
+    events:
+      - http:
+          path: query
+          method: post
+          cors: true
+      - http:
+          path: graphiql
+          method: post
+          cors: true
+      - http:
+          path: playground
+          method: '*'
+          cors: true
+
+
+plugins:
+  - serverless-offline
